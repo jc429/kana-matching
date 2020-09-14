@@ -4,18 +4,173 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!-- JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
 	
+
 	<!-- Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="style.css" />
+
+	<!-- Scripts -->
+	<script src="kana-match.js"></script>
+
+	
+	<!-- Cute Icon -->
+	<link rel="icon" href="img/a.png">
 
 	<title>Kana Matching Game</title>
 </head>
 <body>
-	<p> hello </p>
+	<h1> Kana Matching Game </h1>
+
 	<p> Test Test Test アアアアア  </p>
+
+	<div id="main-kana" class="container ">
+		<table class="table table-bordered table-sm table-hover bg-dark text-white">
+			<thead>
+				<tr>
+					<th scope="col" colspan="11">Basic Characters</th>
+				</tr>
+				<tr>
+					<th scope="col">n</th>
+					<th scope="col">w</th>
+					<th scope="col">r</th>
+					<th scope="col">y</th>
+					<th scope="col">m</th>
+					<th scope="col">h</th>
+					<th scope="col">n</th>
+					<th scope="col">t</th>
+					<th scope="col">s</th>
+					<th scope="col">k</th>
+					<th scope="col">a</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="n"> </td>
+					<td id="wa"> </td>
+					<td id="ra"> </td>
+					<td id="ya"> </td>
+					<td id="ma"> </td>
+					<td id="ha"> </td>
+					<td id="na"> </td>
+					<td id="ta"> </td>
+					<td id="sa"> </td>
+					<td id="ka"> </td>
+					<td id="a"> </td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td id="ri"> </td>
+					<td></td>
+					<td id="mi"> </td>
+					<td id="hi"> </td>
+					<td id="ni"> </td>
+					<td id="chi"> </td>
+					<td id="shi"> </td>
+					<td id="ki"> </td>
+					<td id="i"> </td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td id="ru"> </td>
+					<td id="yu"> </td>
+					<td id="mu"> </td>
+					<td id="fu"> </td>
+					<td id="nu"> </td>
+					<td id="tsu"> </td>
+					<td id="su"> </td>
+					<td id="ku"> </td>
+					<td id="u"> </td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td id="re"> </td>
+					<td></td>
+					<td id="me"> </td>
+					<td id="he"> </td>
+					<td id="ne"> </td>
+					<td id="te"> </td>
+					<td id="se"> </td>
+					<td id="ke"> </td>
+					<td id="e"> </td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id="wo"> </td>
+					<td id="ro"> </td>
+					<td id="yo"> </td>
+					<td id="mo"> </td>
+					<td id="ho"> </td>
+					<td id="no"> </td>
+					<td id="to"> </td>
+					<td id="so"> </td>
+					<td id="ko"> </td>
+					<td id="o"> </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div id="dakuten" class="container ">
+		<table class="table table-bordered table-sm table-hover bg-dark text-white">
+			<thead>
+				<tr>
+					<th scope="col" colspan="5">Dakuten</th>
+				</tr>
+				<tr>
+					<th scope="col">p</th>
+					<th scope="col">b</th>
+					<th scope="col">d</th>
+					<th scope="col">z</th>
+					<th scope="col">g</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="pa"> </td>
+					<td id="ba"> </td>
+					<td id="da"> </td>
+					<td id="za"> </td>
+					<td id="ga"> </td>
+				</tr>
+				<tr>
+					<td id="pi"> </td>
+					<td id="bi"> </td>
+					<td id="dzi"> </td>
+					<td id="ji"> </td>
+					<td id="gi"> </td>
+				</tr>
+				<tr>
+					<td id="pu"> </td>
+					<td id="bu"> </td>
+					<td id="dzu"> </td>
+					<td id="zu"> </td>
+					<td id="gu"> </td>
+				</tr>
+				<tr>
+					<td id="pe"> </td>
+					<td id="be"> </td>
+					<td id="de"> </td>
+					<td id="ze"> </td>
+					<td id="ge"> </td>
+				</tr>
+				<tr>
+					<td id="po"> </td>
+					<td id="bo"> </td>
+					<td id="do"> </td>
+					<td id="zo"> </td>
+					<td id="go"> </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>

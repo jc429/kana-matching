@@ -1,0 +1,25 @@
+
+h1 {
+	text-align: center;
+}
+
+th {
+	text-align: center;
+}
+
+td {
+	text-align: center;
+}
+
+p {
+	font-size: 24px;
+}
+
+.table-hover>tbody>tr>td:hover, .table-hover>tbody>tr>td:hover{
+	background-color: #444466!important; 
+}
+
+.table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover{
+	color: inherit;
+	background-color: inherit;
+}
