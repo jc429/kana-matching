@@ -27,150 +27,247 @@
 <body>
 	<h1> Kana Matching Game </h1>
 
-	<p> Test Test Test アアアアア  </p>
+	<h3> Have Fun :) </h3>
 
-	<div id="main-kana" class="container ">
-		<table class="table table-bordered table-sm table-hover bg-dark text-white">
-			<thead>
-				<tr>
-					<th scope="col" colspan="11">Basic Characters</th>
-				</tr>
-				<tr>
-					<th scope="col">n</th>
-					<th scope="col">w</th>
-					<th scope="col">r</th>
-					<th scope="col">y</th>
-					<th scope="col">m</th>
-					<th scope="col">h</th>
-					<th scope="col">n</th>
-					<th scope="col">t</th>
-					<th scope="col">s</th>
-					<th scope="col">k</th>
-					<th scope="col">a</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td id="n"> </td>
-					<td id="wa"> </td>
-					<td id="ra"> </td>
-					<td id="ya"> </td>
-					<td id="ma"> </td>
-					<td id="ha"> </td>
-					<td id="na"> </td>
-					<td id="ta"> </td>
-					<td id="sa"> </td>
-					<td id="ka"> </td>
-					<td id="a"> </td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td id="ri"> </td>
-					<td></td>
-					<td id="mi"> </td>
-					<td id="hi"> </td>
-					<td id="ni"> </td>
-					<td id="chi"> </td>
-					<td id="shi"> </td>
-					<td id="ki"> </td>
-					<td id="i"> </td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td id="ru"> </td>
-					<td id="yu"> </td>
-					<td id="mu"> </td>
-					<td id="fu"> </td>
-					<td id="nu"> </td>
-					<td id="tsu"> </td>
-					<td id="su"> </td>
-					<td id="ku"> </td>
-					<td id="u"> </td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td id="re"> </td>
-					<td></td>
-					<td id="me"> </td>
-					<td id="he"> </td>
-					<td id="ne"> </td>
-					<td id="te"> </td>
-					<td id="se"> </td>
-					<td id="ke"> </td>
-					<td id="e"> </td>
-				</tr>
-				<tr>
-					<td></td>
-					<td id="wo"> </td>
-					<td id="ro"> </td>
-					<td id="yo"> </td>
-					<td id="mo"> </td>
-					<td id="ho"> </td>
-					<td id="no"> </td>
-					<td id="to"> </td>
-					<td id="so"> </td>
-					<td id="ko"> </td>
-					<td id="o"> </td>
-				</tr>
-			</tbody>
-		</table>
+
+
+	<div id="game-area" class="container border border-primary rounded p-3 col-sm-4">
+		<div class="row">
+			<div class="card container border border-secondary rounded col-sm-5 ">
+				<div class="card-contents">
+					<p class="massive center">あ</p>
+				</div>
+			</div>
+			<div class="card container border border-secondary rounded col-sm-5 ">
+				<div class="card-contents">
+					<p class="massive center">ア</p>
+				</div>
+			</div>
+		</div>
+		
 	</div>
 
-	<div id="dakuten" class="container ">
-		<table class="table table-bordered table-sm table-hover bg-dark text-white">
-			<thead>
-				<tr>
-					<th scope="col" colspan="5">Dakuten</th>
-				</tr>
-				<tr>
-					<th scope="col">p</th>
-					<th scope="col">b</th>
-					<th scope="col">d</th>
-					<th scope="col">z</th>
-					<th scope="col">g</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td id="pa"> </td>
-					<td id="ba"> </td>
-					<td id="da"> </td>
-					<td id="za"> </td>
-					<td id="ga"> </td>
-				</tr>
-				<tr>
-					<td id="pi"> </td>
-					<td id="bi"> </td>
-					<td id="dzi"> </td>
-					<td id="ji"> </td>
-					<td id="gi"> </td>
-				</tr>
-				<tr>
-					<td id="pu"> </td>
-					<td id="bu"> </td>
-					<td id="dzu"> </td>
-					<td id="zu"> </td>
-					<td id="gu"> </td>
-				</tr>
-				<tr>
-					<td id="pe"> </td>
-					<td id="be"> </td>
-					<td id="de"> </td>
-					<td id="ze"> </td>
-					<td id="ge"> </td>
-				</tr>
-				<tr>
-					<td id="po"> </td>
-					<td id="bo"> </td>
-					<td id="do"> </td>
-					<td id="zo"> </td>
-					<td id="go"> </td>
-				</tr>
-			</tbody>
-		</table>
+	<div id="settings" class="container ">
+		<input id="show-main" type="checkbox" checked="checked"> Show Main Kana Chart</input> <br/>
+		<input id="show-dakuten" type="checkbox" checked="checked"> Show Dakuten Chart</input> <br/>
+		<input id="show-combo" type="checkbox" checked="checked"> Show Combo Kana Chart</input>
+	</div>
+
+	<hr/>
+
+	<div id="chart-zone" class="col-sm-8">
+		
+		<div id="main-chart" class="container col-sm-11">
+			<table class="table table-bordered table-sm bg-dark text-white">
+				<thead>
+					<tr>
+						<th scope="col" colspan="11">Basic Characters</th>
+					</tr>
+					<tr>
+						<th scope="col">n</th>
+						<th scope="col">w</th>
+						<th scope="col">r</th>
+						<th scope="col">y</th>
+						<th scope="col">m</th>
+						<th scope="col">h</th>
+						<th scope="col">n</th>
+						<th scope="col">t</th>
+						<th scope="col">s</th>
+						<th scope="col">k</th>
+						<th scope="col">a</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td id="n" class="cell"> </td>
+						<td id="wa" class="cell"> </td>
+						<td id="ra" class="cell"> </td>
+						<td id="ya" class="cell"> </td>
+						<td id="ma" class="cell"> </td>
+						<td id="ha" class="cell"> </td>
+						<td id="na" class="cell"> </td>
+						<td id="ta" class="cell"> </td>
+						<td id="sa" class="cell"> </td>
+						<td id="ka" class="cell"> </td>
+						<td id="a" class="cell"> </td>
+					</tr>
+					<tr>
+						<td> </td>
+						<td> </td>
+						<td id="ri" class="cell"> </td>
+						<td> </td>
+						<td id="mi" class="cell"> </td>
+						<td id="hi" class="cell"> </td>
+						<td id="ni" class="cell"> </td>
+						<td id="chi" class="cell"> </td>
+						<td id="shi" class="cell"> </td>
+						<td id="ki" class="cell"> </td>
+						<td id="i" class="cell"> </td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td id="ru" class="cell"> </td>
+						<td id="yu" class="cell"> </td>
+						<td id="mu" class="cell"> </td>
+						<td id="fu" class="cell"> </td>
+						<td id="nu" class="cell"> </td>
+						<td id="tsu" class="cell"> </td>
+						<td id="su" class="cell"> </td>
+						<td id="ku" class="cell"> </td>
+						<td id="u" class="cell"> </td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td id="re" class="cell"> </td>
+						<td></td>
+						<td id="me" class="cell"> </td>
+						<td id="he" class="cell"> </td>
+						<td id="ne" class="cell"> </td>
+						<td id="te" class="cell"> </td>
+						<td id="se" class="cell"> </td>
+						<td id="ke" class="cell"> </td>
+						<td id="e" class="cell"> </td>
+					</tr>
+					<tr>
+						<td></td>
+						<td id="wo" class="cell"> </td>
+						<td id="ro" class="cell"> </td>
+						<td id="yo" class="cell"> </td>
+						<td id="mo" class="cell"> </td>
+						<td id="ho" class="cell"> </td>
+						<td id="no" class="cell"> </td>
+						<td id="to" class="cell"> </td>
+						<td id="so" class="cell"> </td>
+						<td id="ko" class="cell"> </td>
+						<td id="o" class="cell"> </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div id="dakuten-chart" class="container col-sm-5">
+			<table class="table table-bordered table-sm bg-dark text-white">
+				<thead>
+					<tr>
+						<th scope="col" colspan="5">Dakuten</th>
+					</tr>
+					<tr>
+						<th scope="col">p</th>
+						<th scope="col">b</th>
+						<th scope="col">d</th>
+						<th scope="col">z</th>
+						<th scope="col">g</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td id="pa" class="cell"> </td>
+						<td id="ba" class="cell"> </td>
+						<td id="da" class="cell"> </td>
+						<td id="za" class="cell"> </td>
+						<td id="ga" class="cell"> </td>
+					</tr>
+					<tr>
+						<td id="pi" class="cell"> </td>
+						<td id="bi" class="cell"> </td>
+						<td id="dzi" class="cell"> </td>
+						<td id="ji" class="cell"> </td>
+						<td id="gi" class="cell"> </td>
+					</tr>
+					<tr>
+						<td id="pu" class="cell"> </td>
+						<td id="bu" class="cell"> </td>
+						<td id="dzu" class="cell"> </td>
+						<td id="zu" class="cell"> </td>
+						<td id="gu" class="cell"> </td>
+					</tr>
+					<tr>
+						<td id="pe" class="cell"> </td>
+						<td id="be" class="cell"> </td>
+						<td id="de" class="cell"> </td>
+						<td id="ze" class="cell"> </td>
+						<td id="ge" class="cell"> </td>
+					</tr>
+					<tr>
+						<td id="po" class="cell"> </td>
+						<td id="bo" class="cell"> </td>
+						<td id="do" class="cell"> </td>
+						<td id="zo" class="cell"> </td>
+						<td id="go" class="cell"> </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div id="combo-chart" class="container col-sm-12">
+			<table class="table table-bordered table-sm bg-dark text-white">
+				<thead>
+					<tr>
+						<th scope="col" colspan="12">Combination Characters</th>
+					</tr>
+					<tr>
+						<th scope="col">p</th>
+						<th scope="col">b</th>
+						<th scope="col">d</th>
+						<th scope="col">j</th>
+						<th scope="col">g</th>
+						<th scope="col">r</th>
+						<th scope="col">m</th>
+						<th scope="col">h</th>
+						<th scope="col">n</th>
+						<th scope="col">ch</th>
+						<th scope="col">sh</th>
+						<th scope="col">k</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td id="pya" class="cell"> </td>
+						<td id="bya" class="cell"> </td>
+						<td id="dzya" class="cell"> </td>
+						<td id="jya" class="cell"> </td>
+						<td id="gya" class="cell"> </td>
+						<td id="rya" class="cell"> </td>
+						<td id="mya" class="cell"> </td>
+						<td id="hya" class="cell"> </td>
+						<td id="nya" class="cell"> </td>
+						<td id="cha" class="cell"> </td>
+						<td id="sha" class="cell"> </td>
+						<td id="kya" class="cell"> </td>
+					</tr>
+					<tr>
+						<td id="pyu" class="cell"> </td>
+						<td id="byu" class="cell"> </td>
+						<td id="dzyu" class="cell"> </td>
+						<td id="jyu" class="cell"> </td>
+						<td id="gyu" class="cell"> </td>
+						<td id="ryu" class="cell"> </td>
+						<td id="myu" class="cell"> </td>
+						<td id="hyu" class="cell"> </td>
+						<td id="nyu" class="cell"> </td>
+						<td id="chu" class="cell"> </td>
+						<td id="shu" class="cell"> </td>
+						<td id="kyu" class="cell"> </td>
+					</tr>
+					<tr>
+						<td id="pyo" class="cell"> </td>
+						<td id="byo" class="cell"> </td>
+						<td id="dzyo" class="cell"> </td>
+						<td id="jyo" class="cell"> </td>
+						<td id="gyo" class="cell"> </td>
+						<td id="ryo" class="cell"> </td>
+						<td id="myo" class="cell"> </td>
+						<td id="hyo" class="cell"> </td>
+						<td id="nyo" class="cell"> </td>
+						<td id="cho" class="cell"> </td>
+						<td id="sho" class="cell"> </td>
+						<td id="kyo" class="cell"> </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
 </body>
 </html>

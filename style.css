@@ -1,5 +1,22 @@
 
+:root {
+	--page-bg-color: #eeeeff;
+
+	
+	--card-bg-color: #ddddee;
+	--card-click-color: #ccccff;
+	--card-hover-color: #aaaadd;
+	
+	--cell-bg-color: #343a40;
+	--cell-click-color: #666699;
+	--cell-hover-color: #444466;
+}
+
 h1 {
+	text-align: center;
+}
+
+h3 {
 	text-align: center;
 }
 
@@ -15,11 +32,59 @@ p {
 	font-size: 24px;
 }
 
-.table-hover>tbody>tr>td:hover, .table-hover>tbody>tr>td:hover{
-	background-color: #444466!important; 
+hr {
+	width: 60%;
 }
 
-.table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover{
-	color: inherit;
-	background-color: inherit;
+
+
+.center {
+	text-align: center;
 }
+
+.massive {
+	font-size: 96px;
+}
+
+.card{
+	background-color: var(--card-bg-color);
+	transition: 0.2s;
+}
+
+.card:after {
+	content: "";
+	display: block;
+	padding-bottom: 42%;
+}
+
+.card:hover {
+	background-color: var(--card-hover-color);
+}
+
+.card:active {
+	background-color: var(--card-click-color);
+}
+
+.card-contents{
+	-webkit-touch-callout : none;
+	-webkit-user-select: none;
+}
+
+.cell{
+	background-color: var(--cell-bg-color);
+	transition: 0.2s;
+}
+
+.cell:hover {
+	background-color: var(--cell-hover-color);
+}
+
+.cell:active {
+	background-color: var(--cell-click-color);
+}
+
+.cell-contents{
+	-webkit-touch-callout : none;
+	-webkit-user-select: none;
+}
+
