@@ -6,14 +6,18 @@ $(document).ready(function(){
 	LoadKana();
 
 
-	$("#show-main").click(function(){
+	$("#btn-show-main").click(function(){
 		$("#main-chart").toggle();
 	});
-	$("#show-dakuten").click(function(){
+	$("#btn-show-dakuten").click(function(){
 		$("#dakuten-chart").toggle();
 	});
-	$("#show-combo").click(function(){
+	$("#btn-show-combo").click(function(){
 		$("#combo-chart").toggle();
+	});
+
+	$("input[type=radio]").click(function () {
+		UpdateRadio(this);
 	});
 
 
@@ -49,4 +53,37 @@ function LoadKana(){
 
 
 	});
+}
+
+/* prevent matching with self*/
+function UpdateRadio(btn){
+	if($(btn).prop("checked") && $(btn).prop("name")=="radioL") {	
+		//alert($(btn).prop("id") +" checked!"); 
+		$("#hiraganaR").prop("disabled", false);
+		$("#katakanaR").prop("disabled", false);
+		$("#romanjiR").prop("disabled", false);
+		switch($(btn).prop("id")){
+			case "hiraganaL":
+				$("#hiraganaR").prop("disabled", true);
+				if($("#hiraganaR").prop("checked")){
+					$("#katakanaR").prop("checked", true);
+					$("#hiraganaR").prop("checked", false);
+				}
+				break;
+			case "katakanaL":
+				$("#katakanaR").prop("disabled", true);
+				if($("#katakanaR").prop("checked")){
+					$("#hiraganaR").prop("checked", true);
+					$("#katakanaR").prop("checked", false);
+				}
+				break;
+			case "romanjiL":
+				$("#romanjiR").prop("disabled", true);
+				if($("#romanjiR").prop("checked")){
+					$("#hiraganaR").prop("checked", true);
+					$("#romanjiR").prop("checked", false);
+				}
+				break;
+		}
+	}
 }

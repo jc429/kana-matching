@@ -2,14 +2,21 @@
 :root {
 	--page-bg-color: #eeeeff;
 
+	--btn-bg-color: #8888dd;
+	--btn-text-color: #eeeeff;
+	--btn-hover-color: #aaaadd;
+	--btn-clicked-color: #9999ff;
 	
-	--card-bg-color: #ddddee;
+	--card-bg-color: #eeeeff;
 	--card-click-color: #ccccff;
 	--card-hover-color: #aaaadd;
 	
 	--cell-bg-color: #343a40;
 	--cell-click-color: #666699;
 	--cell-hover-color: #444466;
+
+	--game-area-border-color: #aaaadd;
+	--game-area-bg-color: #ddddee;
 }
 
 h1 {
@@ -42,9 +49,22 @@ hr {
 	text-align: center;
 }
 
-.massive {
-	font-size: 96px;
+
+.btn-selection{
+	background-color: var(--btn-bg-color);
+	color: var(--btn-text-color);
 }
+
+.btn-selection:hover{
+	background-color: var(--btn-hover-color);
+	color: var(--btn-text-color);
+}
+
+.btn-selection:focus{
+	background-color: var(--btn-clicked-color);
+	color: var(--btn-text-color);
+}
+
 
 .card{
 	background-color: var(--card-bg-color);
@@ -86,5 +106,33 @@ hr {
 .cell-contents{
 	-webkit-touch-callout : none;
 	-webkit-user-select: none;
+
+	font-size: 18px;
+	padding-bottom: 10%;
 }
 
+
+
+.game-area{
+	border-style: solid;
+	border-color: var(--game-area-border-color);
+	border-width: 5px;
+	border-radius: 10px;
+
+	background-color: var(--game-area-bg-color);
+}
+
+
+.massive {
+	font-size: 96px;
+}
+
+
+.settings-area{
+	border-style: solid;
+	border-color: var(--game-area-border-color);
+	border-width: 5px;
+	border-radius: 10px;
+
+	background-color: var(--game-area-bg-color);
+}
