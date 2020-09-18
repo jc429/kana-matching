@@ -1,10 +1,9 @@
 /* Main Kana Matching Program */
 
-var kana_list;
+var kana_list = "";
 
 $(document).ready(function(){
 	LoadKana();
-
 
 	$("#btn-show-main").click(function(){
 		$("#main-chart").toggle();
@@ -20,7 +19,7 @@ $(document).ready(function(){
 		UpdateRadio(this);
 	});
 
-
+	
 });
 
 /* Load in the kana on page load */
@@ -51,9 +50,63 @@ function LoadKana(){
 			div.insertAdjacentHTML("beforeend", "<p class=\"cell-contents\">" + curKana.hiragana + "<br/>" + curKana.katakana + "<br/>" + curKana.romanji + "</p>");
 		});	
 
-
+		InitGame();
 	});
 }
+
+function InitGame(){
+	var finding_area = document.getElementById("finding-area");
+	var klist = [];
+	var mode = "hiragana"
+
+	finding_area.innerHTML = "";
+
+	if($("#incl-basic").prop("checked")){
+		$.each(kana_list.main, function(i, curKana){
+			klist.push(curKana);
+		});
+	}
+	if($("#incl-dakuten").prop("checked")){
+		$.each(kana_list.dakuten, function(i, curKana){
+			klist.push(curKana);
+		});
+	}
+	if($("#incl-combo").prop("checked")){
+		$.each(kana_list.combination, function(i, curKana){
+			klist.push(curKana);
+		});
+	}
+	
+	klist = Shuffle(klist);
+
+	//finding_area.insertAdjacentHTML("beforeend","<p><b>");
+	var str = "";
+	$.each(klist, function(i, curKana){
+		str += CreateKanaNode(finding_area, curKana, mode);
+	});
+	finding_area.insertAdjacentHTML("beforeend", str);
+	//finding_area.insertAdjacentHTML("beforeend","</b></p>");
+}
+
+function CreateKanaNode(finding_area, kana, mode){
+	var str = "<div class=\"find-tile\">";
+	str += "<div class=\"find-tile-contents\" id=\"find-" + kana.romanji + "\">";
+	switch(mode){
+		case "hiragana":
+			str += kana.hiragana;
+			break;
+		case "katakana":
+			str += kana.katakana;
+			break;
+		case "romanji":
+			str += kana.romanji;
+			break;
+	}
+	str += "</div>";
+	str += "</div>";
+	return str
+}
+
 
 /* prevent matching with self*/
 function UpdateRadio(btn){
@@ -86,4 +139,20 @@ function UpdateRadio(btn){
 				break;
 		}
 	}
+}
+
+/* shuffling function */
+function Shuffle(array) {
+	var m = array.length, t, i;
+	// While there remain elements to shuffle…
+	while (m) {
+		// Pick a remaining element…
+		i = Math.floor(Math.random() * m--);
+	
+		// And swap it with the current element.
+		t = array[m];
+		array[m] = array[i];
+		array[i] = t;
+	}
+	return array;
 }

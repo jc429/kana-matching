@@ -34,16 +34,16 @@
 	</div>
 
 	<div class="row">
-		<div id="game-area" class="container game-area p-3 col-sm-6">
+		<div id="game-area" class="container game-area p-3 col-sm-10">
 			<div class="row">
 				<div class="card container border border-secondary rounded col-sm-5 ">
 					<div class="card-contents">
-						<p class="massive center">あ</p>
+						<p class="massive center">あ<br/>ア</p>
 					</div>
 				</div>
-				<div class="card container border border-secondary rounded col-sm-5 ">
-					<div class="card-contents">
-						<p class="massive center">ア</p>
+				<div class="container border border-secondary rounded col-sm-5 ">
+					<div id="finding-area">
+						
 					</div>
 				</div>
 			</div>
@@ -55,7 +55,7 @@
 	<div class="row">
 		<div id="settings" class="settings-area container col-sm-6">
 			<div class="row">
-				<div class="col-sm-6">
+				<div class="col-sm-4">
 					<div class="float-right">
 						<p class="center">Match...</p>
 						<div class="form-check">
@@ -73,17 +73,9 @@
 								<input id="romanjiL"type="radio" class="form-check-input" name="radioL">Romanji
 							</label>
 						</div>
-						
-						<!-- <p class="center">Match...</p>
-						<div class="btn-group-vertical" role="group">
-							<button type="button" class="btn btn-selection">Hiragana</button>
-							<button type="button" class="btn btn-selection">Katakana</button>
-							<button type="button" class="btn btn-selection">Romanji</button>
-							<button type="button" class="btn btn-selection">Random</button>
-						</div>-->
 					</div>
 				</div>
-				<div class="col-sm-6">
+				<div class="col-sm-4">
 					<div class="float-left">
 						<p class="center">To...</p>
 						<div class="form-check">
@@ -102,14 +94,33 @@
 							</label>
 						</div>
 					</div>
-					
+				</div>
+				<div class="col-sm-4">
+					<div class="float-left">
+						<p class="center">Include...</p>
+						<div class="form-check">
+							<label class="form-check-label">
+								<input id="incl-basic" type="checkbox" class="form-check-input" name="incl-kana" checked>Basic Kana
+							</label>
+						</div>
+						<div class="form-check">
+							<label class="form-check-label">
+								<input id="incl-dakuten" type="checkbox" class="form-check-input" name="incl-kana" checked>Dakuten
+							</label>
+						</div>
+						<div class="form-check">
+							<label class="form-check-label">
+								<input id="incl-combo" type="checkbox" class="form-check-input" name="incl-kana" checked>Combo Kana
+							</label>
+						</div>
+					</div>
 				</div>
 			</div>
 
 			<hr/>
 			
 			<div class="btn-group center">
-				<button id="btn-show-main" type="checkbox" checked="checked"> Show Main Kana Chart</button>
+				<button id="btn-show-main" type="checkbox" checked="checked"> Show Basic Kana Chart</button>
 				<button id="btn-show-dakuten" type="checkbox" checked="checked"> Show Dakuten Chart</button>
 				<button id="btn-show-combo" type="checkbox" checked="checked"> Show Combo Kana Chart</button>
 			</div>

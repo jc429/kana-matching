@@ -74,7 +74,6 @@ hr {
 .card:after {
 	content: "";
 	display: block;
-	padding-bottom: 42%;
 }
 
 .card:hover {
@@ -108,10 +107,42 @@ hr {
 	-webkit-user-select: none;
 
 	font-size: 18px;
-	padding-bottom: 10%;
+}
+
+.find-tile{
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 5px;
+	border-color: var(--game-area-border-color);
+	background-color: var(--card-bg-color);
+	padding: 1px;
+	margin: 1px;
+
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-weight: bold;
+	display: inline-block;
+}
+
+.find-tile:hover {
+	background-color: var(--card-hover-color);
+}
+
+.find-tile:active {
+	background-color: var(--card-click-color);
+}
+
+.find-tile-contents{
+	-webkit-touch-callout : none;
+	-webkit-user-select: none;
 }
 
 
+.finding-area{
+	padding: 10px;
+}
 
 .game-area{
 	border-style: solid;
