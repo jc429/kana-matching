@@ -134,7 +134,7 @@ hr {
 	background-color: var(--card-click-color);
 }
 
-.find-tile-contents{
+.tile-contents{
 	-webkit-touch-callout : none;
 	-webkit-user-select: none;
 }
@@ -142,6 +142,7 @@ hr {
 
 .finding-area{
 	padding: 10px;
+	margin: 10px;
 }
 
 .game-area{

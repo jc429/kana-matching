@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="notranslate" translate="no">
 <head>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
@@ -37,13 +37,13 @@
 		<div id="game-area" class="container game-area p-3 col-sm-10">
 			<div class="row">
 				<div class="card container border border-secondary rounded col-sm-5 ">
-					<div class="card-contents">
-						<p class="massive center">あ<br/>ア</p>
+					<div id="active-card" class="card-contents">
+						<!-- kana card goes here -->
 					</div>
 				</div>
 				<div class="container border border-secondary rounded col-sm-5 ">
 					<div id="finding-area">
-						
+						<!-- kana tiles go here -->
 					</div>
 				</div>
 			</div>
@@ -60,17 +60,17 @@
 						<p class="center">Match...</p>
 						<div class="form-check">
 							<label class="form-check-label">
-								<input id="hiraganaL"type="radio" class="form-check-input" name="radioL" checked>Hiragana
+								<input id="card-lang-hiragana" type="radio" class="form-check-input" name="radioL" checked>Hiragana
 							</label>
 						</div>
 						<div class="form-check">
 							<label class="form-check-label">
-								<input id="katakanaL"type="radio" class="form-check-input" name="radioL">Katakana
+								<input id="card-lang-katakana" type="radio" class="form-check-input" name="radioL">Katakana
 							</label>
 						</div>
 						<div class="form-check">
 							<label class="form-check-label">
-								<input id="romanjiL"type="radio" class="form-check-input" name="radioL">Romanji
+								<input id="card-lang-romanji" type="radio" class="form-check-input" name="radioL">Romanji
 							</label>
 						</div>
 					</div>
@@ -80,17 +80,17 @@
 						<p class="center">To...</p>
 						<div class="form-check">
 							<label class="form-check-label">
-								<input id="hiraganaR" type="radio" class="form-check-input" name="radioR" disabled>Hiragana
+								<input id="tile-lang-hiragana" type="radio" class="form-check-input" name="radioR" disabled>Hiragana
 							</label>
 						</div>
 						<div class="form-check">
 							<label class="form-check-label">
-								<input id="katakanaR" type="radio" class="form-check-input" name="radioR">Katakana
+								<input id="tile-lang-katakana" type="radio" class="form-check-input" name="radioR" checked>Katakana
 							</label>
 						</div>
 						<div class="form-check">
 							<label class="form-check-label">
-								<input id="romanjiR" type="radio" class="form-check-input" name="radioR" checked>Romanji
+								<input id="tile-lang-romanji" type="radio" class="form-check-input" name="radioR">Romanji
 							</label>
 						</div>
 					</div>
@@ -105,12 +105,12 @@
 						</div>
 						<div class="form-check">
 							<label class="form-check-label">
-								<input id="incl-dakuten" type="checkbox" class="form-check-input" name="incl-kana" checked>Dakuten
+								<input id="incl-dakuten" type="checkbox" class="form-check-input" name="incl-kana">Dakuten
 							</label>
 						</div>
 						<div class="form-check">
 							<label class="form-check-label">
-								<input id="incl-combo" type="checkbox" class="form-check-input" name="incl-kana" checked>Combo Kana
+								<input id="incl-combo" type="checkbox" class="form-check-input" name="incl-kana">Combo Kana
 							</label>
 						</div>
 					</div>

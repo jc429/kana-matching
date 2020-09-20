@@ -1,6 +1,10 @@
 /* Main Kana Matching Program */
 
 var kana_list = "";
+var card_stack = [];
+var card_lang = "";
+var tile_lang = "";
+var cur_kana;
 
 $(document).ready(function(){
 	LoadKana();
@@ -17,6 +21,7 @@ $(document).ready(function(){
 
 	$("input[type=radio]").click(function () {
 		UpdateRadio(this);
+		InitGame();
 	});
 
 	
@@ -57,7 +62,29 @@ function LoadKana(){
 function InitGame(){
 	var finding_area = document.getElementById("finding-area");
 	var klist = [];
-	var mode = "hiragana"
+	card_lang = "hiragana";
+	tile_lang = "hiragana";
+
+	if($("#card-lang-hiragana").prop("checked")){
+		card_lang = "hiragana";
+	}
+	if($("#card-lang-katakana").prop("checked")){
+		card_lang = "katakana";
+	}
+	if($("#card-lang-romanji").prop("checked")){
+		card_lang = "romanji";
+	}
+
+	if($("#tile-lang-hiragana").prop("checked")){
+		tile_lang = "hiragana";
+	}
+	if($("#tile-lang-katakana").prop("checked")){
+		tile_lang = "katakana";
+	}
+	if($("#tile-lang-romanji").prop("checked")){
+		tile_lang = "romanji";
+	}
+
 
 	finding_area.innerHTML = "";
 
@@ -77,20 +104,29 @@ function InitGame(){
 		});
 	}
 	
+	/* shuffle the tiles, and shuffle the kana deck too while we're here */
+	card_stack = Shuffle(klist.slice());
 	klist = Shuffle(klist);
 
-	//finding_area.insertAdjacentHTML("beforeend","<p><b>");
+	/* create html for the tiles */
 	var str = "";
 	$.each(klist, function(i, curKana){
-		str += CreateKanaNode(finding_area, curKana, mode);
+		str += CreateKanaNode(curKana, tile_lang);
 	});
 	finding_area.insertAdjacentHTML("beforeend", str);
-	//finding_area.insertAdjacentHTML("beforeend","</b></p>");
+	// hook up click listener 
+	$(".find-tile").click(function (){
+		var kana_name = $(this).children().attr("name");
+		CheckMatch(kana_name);
+	});
+	
+	DrawCard();
 }
 
-function CreateKanaNode(finding_area, kana, mode){
+/* creates a single kana tile */
+function CreateKanaNode(kana, mode){
 	var str = "<div class=\"find-tile\">";
-	str += "<div class=\"find-tile-contents\" id=\"find-" + kana.romanji + "\">";
+	str += "<div class=\"tile-contents\" id=\"find-" + kana.romanji + "\" name=\"" + kana.romanji + "\">";
 	switch(mode){
 		case "hiragana":
 			str += kana.hiragana;
@@ -140,6 +176,59 @@ function UpdateRadio(btn){
 		}
 	}
 }
+
+
+function RetrieveKana(){
+	if(card_stack.length > 0){
+		return card_stack.pop();
+	}
+	else{
+		console.log("no cards remaining");
+	}
+}
+
+/* draw a card off the deck, and display it */ 
+function DrawCard(){
+	active_card = document.getElementById("active-card");
+	active_card.innerHTML = "";
+
+	var str = "<p class=\"massive center\">"
+	
+	cur_kana = RetrieveKana();
+	switch(card_lang){
+		case "hiragana":
+			str += cur_kana.hiragana;
+			break;
+		case "katakana":
+			str += cur_kana.katakana;
+			break;
+		case "romaji":
+			str += cur_kana.romanji;
+			break;
+	}
+
+	str += "</p>";
+
+	active_card.insertAdjacentHTML("beforeend", str);
+}
+
+/* check if the correct kana tile was clicked */
+function CheckMatch(guess){
+	if(guess == cur_kana.romanji){
+		// success!
+		console.log("success!");
+		DrawCard();
+	}
+	else{
+		// failure!
+	}
+}
+
+/* reveal the correct answer on the card */
+function RevealAnswer(){
+
+}
+
 
 /* shuffling function */
 function Shuffle(array) {
