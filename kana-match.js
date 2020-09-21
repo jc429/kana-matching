@@ -146,31 +146,31 @@ function CreateKanaNode(kana, mode){
 
 /* prevent matching with self*/
 function UpdateRadio(btn){
-	if($(btn).prop("checked") && $(btn).prop("name")=="radioL") {	
+	if($(btn).prop("checked") && $(btn).prop("name")=="card-lang-radio") {	
 		//alert($(btn).prop("id") +" checked!"); 
-		$("#hiraganaR").prop("disabled", false);
-		$("#katakanaR").prop("disabled", false);
-		$("#romanjiR").prop("disabled", false);
+		$("#tile-lang-hiragana").prop("disabled", false);
+		$("#tile-lang-katakana").prop("disabled", false);
+		$("#tile-lang-romanji").prop("disabled", false);
 		switch($(btn).prop("id")){
-			case "hiraganaL":
-				$("#hiraganaR").prop("disabled", true);
-				if($("#hiraganaR").prop("checked")){
-					$("#katakanaR").prop("checked", true);
-					$("#hiraganaR").prop("checked", false);
+			case "card-lang-hiragana":
+				$("#tile-lang-hiragana").prop("disabled", true);
+				if($("#tile-lang-hiragana").prop("checked")){
+					$("#tile-lang-katakana").prop("checked", true);
+					$("#tile-lang-hiragana").prop("checked", false);
 				}
 				break;
-			case "katakanaL":
-				$("#katakanaR").prop("disabled", true);
-				if($("#katakanaR").prop("checked")){
-					$("#hiraganaR").prop("checked", true);
-					$("#katakanaR").prop("checked", false);
+			case "card-lang-katakana":
+				$("#tile-lang-katakana").prop("disabled", true);
+				if($("#tile-lang-katakana").prop("checked")){
+					$("#tile-lang-hiragana").prop("checked", true);
+					$("#tile-lang-katakana").prop("checked", false);
 				}
 				break;
-			case "romanjiL":
-				$("#romanjiR").prop("disabled", true);
-				if($("#romanjiR").prop("checked")){
-					$("#hiraganaR").prop("checked", true);
-					$("#romanjiR").prop("checked", false);
+			case "card-lang-romanji":
+				$("#tile-lang-romanji").prop("disabled", true);
+				if($("#tile-lang-romanji").prop("checked")){
+					$("#tile-lang-hiragana").prop("checked", true);
+					$("#tile-lang-romanji").prop("checked", false);
 				}
 				break;
 		}
@@ -202,7 +202,7 @@ function DrawCard(){
 		case "katakana":
 			str += cur_kana.katakana;
 			break;
-		case "romaji":
+		case "romanji":
 			str += cur_kana.romanji;
 			break;
 	}
@@ -214,6 +214,7 @@ function DrawCard(){
 
 /* check if the correct kana tile was clicked */
 function CheckMatch(guess){
+	FlashCard("red");
 	if(guess == cur_kana.romanji){
 		// success!
 		console.log("success!");
@@ -227,6 +228,11 @@ function CheckMatch(guess){
 /* reveal the correct answer on the card */
 function RevealAnswer(){
 
+}
+
+
+function FlashCard(color){
+	console.log("...!");
 }
 
 

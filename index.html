@@ -36,13 +36,13 @@
 	<div class="row">
 		<div id="game-area" class="container game-area p-3 col-sm-10">
 			<div class="row">
-				<div class="card container border border-secondary rounded col-sm-5 ">
+				<div class="card container col-sm-5 ">
 					<div id="active-card" class="card-contents">
 						<!-- kana card goes here -->
 					</div>
 				</div>
-				<div class="container border border-secondary rounded col-sm-5 ">
-					<div id="finding-area">
+				<div class="col-sm-5 ">
+					<div id="finding-area" class="finding-area">
 						<!-- kana tiles go here -->
 					</div>
 				</div>
@@ -60,17 +60,17 @@
 						<p class="center">Match...</p>
 						<div class="form-check">
 							<label class="form-check-label">
-								<input id="card-lang-hiragana" type="radio" class="form-check-input" name="radioL" checked>Hiragana
+								<input id="card-lang-hiragana" type="radio" class="form-check-input" name="card-lang-radio" checked>Hiragana
 							</label>
 						</div>
 						<div class="form-check">
 							<label class="form-check-label">
-								<input id="card-lang-katakana" type="radio" class="form-check-input" name="radioL">Katakana
+								<input id="card-lang-katakana" type="radio" class="form-check-input" name="card-lang-radio">Katakana
 							</label>
 						</div>
 						<div class="form-check">
 							<label class="form-check-label">
-								<input id="card-lang-romanji" type="radio" class="form-check-input" name="radioL">Romanji
+								<input id="card-lang-romanji" type="radio" class="form-check-input" name="card-lang-radio">Romanji
 							</label>
 						</div>
 					</div>
@@ -80,17 +80,17 @@
 						<p class="center">To...</p>
 						<div class="form-check">
 							<label class="form-check-label">
-								<input id="tile-lang-hiragana" type="radio" class="form-check-input" name="radioR" disabled>Hiragana
+								<input id="tile-lang-hiragana" type="radio" class="form-check-input" name="tile-lang-radio" disabled>Hiragana
 							</label>
 						</div>
 						<div class="form-check">
 							<label class="form-check-label">
-								<input id="tile-lang-katakana" type="radio" class="form-check-input" name="radioR" checked>Katakana
+								<input id="tile-lang-katakana" type="radio" class="form-check-input" name="tile-lang-radio" checked>Katakana
 							</label>
 						</div>
 						<div class="form-check">
 							<label class="form-check-label">
-								<input id="tile-lang-romanji" type="radio" class="form-check-input" name="radioR">Romanji
+								<input id="tile-lang-romanji" type="radio" class="form-check-input" name="tile-lang-radio">Romanji
 							</label>
 						</div>
 					</div>
@@ -158,69 +158,69 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td id="n" class="cell"> </td>
-							<td id="wa" class="cell"> </td>
-							<td id="ra" class="cell"> </td>
-							<td id="ya" class="cell"> </td>
-							<td id="ma" class="cell"> </td>
-							<td id="ha" class="cell"> </td>
-							<td id="na" class="cell"> </td>
-							<td id="ta" class="cell"> </td>
-							<td id="sa" class="cell"> </td>
-							<td id="ka" class="cell"> </td>
-							<td id="a" class="cell"> </td>
+							<td id="n" class="kana-cell"> </td>
+							<td id="wa" class="kana-cell"> </td>
+							<td id="ra" class="kana-cell"> </td>
+							<td id="ya" class="kana-cell"> </td>
+							<td id="ma" class="kana-cell"> </td>
+							<td id="ha" class="kana-cell"> </td>
+							<td id="na" class="kana-cell"> </td>
+							<td id="ta" class="kana-cell"> </td>
+							<td id="sa" class="kana-cell"> </td>
+							<td id="ka" class="kana-cell"> </td>
+							<td id="a" class="kana-cell"> </td>
 						</tr>
 						<tr>
 							<td> </td>
 							<td> </td>
-							<td id="ri" class="cell"> </td>
+							<td id="ri" class="kana-cell"> </td>
 							<td> </td>
-							<td id="mi" class="cell"> </td>
-							<td id="hi" class="cell"> </td>
-							<td id="ni" class="cell"> </td>
-							<td id="chi" class="cell"> </td>
-							<td id="shi" class="cell"> </td>
-							<td id="ki" class="cell"> </td>
-							<td id="i" class="cell"> </td>
+							<td id="mi" class="kana-cell"> </td>
+							<td id="hi" class="kana-cell"> </td>
+							<td id="ni" class="kana-cell"> </td>
+							<td id="chi" class="kana-cell"> </td>
+							<td id="shi" class="kana-cell"> </td>
+							<td id="ki" class="kana-cell"> </td>
+							<td id="i" class="kana-cell"> </td>
 						</tr>
 						<tr>
 							<td></td>
 							<td></td>
-							<td id="ru" class="cell"> </td>
-							<td id="yu" class="cell"> </td>
-							<td id="mu" class="cell"> </td>
-							<td id="fu" class="cell"> </td>
-							<td id="nu" class="cell"> </td>
-							<td id="tsu" class="cell"> </td>
-							<td id="su" class="cell"> </td>
-							<td id="ku" class="cell"> </td>
-							<td id="u" class="cell"> </td>
+							<td id="ru" class="kana-cell"> </td>
+							<td id="yu" class="kana-cell"> </td>
+							<td id="mu" class="kana-cell"> </td>
+							<td id="fu" class="kana-cell"> </td>
+							<td id="nu" class="kana-cell"> </td>
+							<td id="tsu" class="kana-cell"> </td>
+							<td id="su" class="kana-cell"> </td>
+							<td id="ku" class="kana-cell"> </td>
+							<td id="u" class="kana-cell"> </td>
 						</tr>
 						<tr>
 							<td></td>
 							<td></td>
-							<td id="re" class="cell"> </td>
+							<td id="re" class="kana-cell"> </td>
 							<td></td>
-							<td id="me" class="cell"> </td>
-							<td id="he" class="cell"> </td>
-							<td id="ne" class="cell"> </td>
-							<td id="te" class="cell"> </td>
-							<td id="se" class="cell"> </td>
-							<td id="ke" class="cell"> </td>
-							<td id="e" class="cell"> </td>
+							<td id="me" class="kana-cell"> </td>
+							<td id="he" class="kana-cell"> </td>
+							<td id="ne" class="kana-cell"> </td>
+							<td id="te" class="kana-cell"> </td>
+							<td id="se" class="kana-cell"> </td>
+							<td id="ke" class="kana-cell"> </td>
+							<td id="e" class="kana-cell"> </td>
 						</tr>
 						<tr>
 							<td></td>
-							<td id="wo" class="cell"> </td>
-							<td id="ro" class="cell"> </td>
-							<td id="yo" class="cell"> </td>
-							<td id="mo" class="cell"> </td>
-							<td id="ho" class="cell"> </td>
-							<td id="no" class="cell"> </td>
-							<td id="to" class="cell"> </td>
-							<td id="so" class="cell"> </td>
-							<td id="ko" class="cell"> </td>
-							<td id="o" class="cell"> </td>
+							<td id="wo" class="kana-cell"> </td>
+							<td id="ro" class="kana-cell"> </td>
+							<td id="yo" class="kana-cell"> </td>
+							<td id="mo" class="kana-cell"> </td>
+							<td id="ho" class="kana-cell"> </td>
+							<td id="no" class="kana-cell"> </td>
+							<td id="to" class="kana-cell"> </td>
+							<td id="so" class="kana-cell"> </td>
+							<td id="ko" class="kana-cell"> </td>
+							<td id="o" class="kana-cell"> </td>
 						</tr>
 					</tbody>
 				</table>
@@ -242,39 +242,39 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td id="pa" class="cell"> </td>
-							<td id="ba" class="cell"> </td>
-							<td id="da" class="cell"> </td>
-							<td id="za" class="cell"> </td>
-							<td id="ga" class="cell"> </td>
+							<td id="pa" class="kana-cell"> </td>
+							<td id="ba" class="kana-cell"> </td>
+							<td id="da" class="kana-cell"> </td>
+							<td id="za" class="kana-cell"> </td>
+							<td id="ga" class="kana-cell"> </td>
 						</tr>
 						<tr>
-							<td id="pi" class="cell"> </td>
-							<td id="bi" class="cell"> </td>
-							<td id="dzi" class="cell"> </td>
-							<td id="ji" class="cell"> </td>
-							<td id="gi" class="cell"> </td>
+							<td id="pi" class="kana-cell"> </td>
+							<td id="bi" class="kana-cell"> </td>
+							<td id="dzi" class="kana-cell"> </td>
+							<td id="ji" class="kana-cell"> </td>
+							<td id="gi" class="kana-cell"> </td>
 						</tr>
 						<tr>
-							<td id="pu" class="cell"> </td>
-							<td id="bu" class="cell"> </td>
-							<td id="dzu" class="cell"> </td>
-							<td id="zu" class="cell"> </td>
-							<td id="gu" class="cell"> </td>
+							<td id="pu" class="kana-cell"> </td>
+							<td id="bu" class="kana-cell"> </td>
+							<td id="dzu" class="kana-cell"> </td>
+							<td id="zu" class="kana-cell"> </td>
+							<td id="gu" class="kana-cell"> </td>
 						</tr>
 						<tr>
-							<td id="pe" class="cell"> </td>
-							<td id="be" class="cell"> </td>
-							<td id="de" class="cell"> </td>
-							<td id="ze" class="cell"> </td>
-							<td id="ge" class="cell"> </td>
+							<td id="pe" class="kana-cell"> </td>
+							<td id="be" class="kana-cell"> </td>
+							<td id="de" class="kana-cell"> </td>
+							<td id="ze" class="kana-cell"> </td>
+							<td id="ge" class="kana-cell"> </td>
 						</tr>
 						<tr>
-							<td id="po" class="cell"> </td>
-							<td id="bo" class="cell"> </td>
-							<td id="do" class="cell"> </td>
-							<td id="zo" class="cell"> </td>
-							<td id="go" class="cell"> </td>
+							<td id="po" class="kana-cell"> </td>
+							<td id="bo" class="kana-cell"> </td>
+							<td id="do" class="kana-cell"> </td>
+							<td id="zo" class="kana-cell"> </td>
+							<td id="go" class="kana-cell"> </td>
 						</tr>
 					</tbody>
 				</table>
@@ -303,46 +303,46 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td id="pya" class="cell"> </td>
-							<td id="bya" class="cell"> </td>
-							<td id="dzya" class="cell"> </td>
-							<td id="jya" class="cell"> </td>
-							<td id="gya" class="cell"> </td>
-							<td id="rya" class="cell"> </td>
-							<td id="mya" class="cell"> </td>
-							<td id="hya" class="cell"> </td>
-							<td id="nya" class="cell"> </td>
-							<td id="cha" class="cell"> </td>
-							<td id="sha" class="cell"> </td>
-							<td id="kya" class="cell"> </td>
+							<td id="pya" class="kana-cell"> </td>
+							<td id="bya" class="kana-cell"> </td>
+							<td id="dzya" class="kana-cell"> </td>
+							<td id="jya" class="kana-cell"> </td>
+							<td id="gya" class="kana-cell"> </td>
+							<td id="rya" class="kana-cell"> </td>
+							<td id="mya" class="kana-cell"> </td>
+							<td id="hya" class="kana-cell"> </td>
+							<td id="nya" class="kana-cell"> </td>
+							<td id="cha" class="kana-cell"> </td>
+							<td id="sha" class="kana-cell"> </td>
+							<td id="kya" class="kana-cell"> </td>
 						</tr>
 						<tr>
-							<td id="pyu" class="cell"> </td>
-							<td id="byu" class="cell"> </td>
-							<td id="dzyu" class="cell"> </td>
-							<td id="jyu" class="cell"> </td>
-							<td id="gyu" class="cell"> </td>
-							<td id="ryu" class="cell"> </td>
-							<td id="myu" class="cell"> </td>
-							<td id="hyu" class="cell"> </td>
-							<td id="nyu" class="cell"> </td>
-							<td id="chu" class="cell"> </td>
-							<td id="shu" class="cell"> </td>
-							<td id="kyu" class="cell"> </td>
+							<td id="pyu" class="kana-cell"> </td>
+							<td id="byu" class="kana-cell"> </td>
+							<td id="dzyu" class="kana-cell"> </td>
+							<td id="jyu" class="kana-cell"> </td>
+							<td id="gyu" class="kana-cell"> </td>
+							<td id="ryu" class="kana-cell"> </td>
+							<td id="myu" class="kana-cell"> </td>
+							<td id="hyu" class="kana-cell"> </td>
+							<td id="nyu" class="kana-cell"> </td>
+							<td id="chu" class="kana-cell"> </td>
+							<td id="shu" class="kana-cell"> </td>
+							<td id="kyu" class="kana-cell"> </td>
 						</tr>
 						<tr>
-							<td id="pyo" class="cell"> </td>
-							<td id="byo" class="cell"> </td>
-							<td id="dzyo" class="cell"> </td>
-							<td id="jyo" class="cell"> </td>
-							<td id="gyo" class="cell"> </td>
-							<td id="ryo" class="cell"> </td>
-							<td id="myo" class="cell"> </td>
-							<td id="hyo" class="cell"> </td>
-							<td id="nyo" class="cell"> </td>
-							<td id="cho" class="cell"> </td>
-							<td id="sho" class="cell"> </td>
-							<td id="kyo" class="cell"> </td>
+							<td id="pyo" class="kana-cell"> </td>
+							<td id="byo" class="kana-cell"> </td>
+							<td id="dzyo" class="kana-cell"> </td>
+							<td id="jyo" class="kana-cell"> </td>
+							<td id="gyo" class="kana-cell"> </td>
+							<td id="ryo" class="kana-cell"> </td>
+							<td id="myo" class="kana-cell"> </td>
+							<td id="hyo" class="kana-cell"> </td>
+							<td id="nyo" class="kana-cell"> </td>
+							<td id="cho" class="kana-cell"> </td>
+							<td id="sho" class="kana-cell"> </td>
+							<td id="kyo" class="kana-cell"> </td>
 						</tr>
 					</tbody>
 				</table>

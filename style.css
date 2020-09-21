@@ -8,15 +8,19 @@
 	--btn-clicked-color: #9999ff;
 	
 	--card-bg-color: #eeeeff;
-	--card-click-color: #ccccff;
-	--card-hover-color: #aaaadd;
+	--card-click-color: #aaaadd;
+	--card-hover-color: #ccccff;
 	
-	--cell-bg-color: #343a40;
-	--cell-click-color: #666699;
-	--cell-hover-color: #444466;
+	--kana-cell-bg-color: #343a40;
+	--kana-cell-click-color: #666699;
+	--kana-cell-hover-color: #444466;
 
 	--game-area-border-color: #aaaadd;
 	--game-area-bg-color: #ddddee;
+
+	--success-color: #88cc88;
+	--failure-color: #cc4444;
+
 }
 
 h1 {
@@ -69,6 +73,12 @@ hr {
 .card{
 	background-color: var(--card-bg-color);
 	transition: 0.2s;
+
+	padding: 10px;
+	border-style: solid;
+	border-width: 4px;
+	border-radius: 10px;
+	border-color: var(--game-area-border-color);
 }
 
 .card:after {
@@ -79,34 +89,25 @@ hr {
 .card:hover {
 	background-color: var(--card-hover-color);
 }
-
+/*
 .card:active {
 	background-color: var(--card-click-color);
-}
+}*/
 
 .card-contents{
 	-webkit-touch-callout : none;
 	-webkit-user-select: none;
 }
 
-.cell{
-	background-color: var(--cell-bg-color);
-	transition: 0.2s;
-}
 
-.cell:hover {
-	background-color: var(--cell-hover-color);
-}
+/* finding area & tiles */
 
-.cell:active {
-	background-color: var(--cell-click-color);
-}
-
-.cell-contents{
-	-webkit-touch-callout : none;
-	-webkit-user-select: none;
-
-	font-size: 18px;
+.finding-area{
+	padding: 10px;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 10px;
+	border-color: var(--game-area-border-color);
 }
 
 .find-tile{
@@ -134,16 +135,7 @@ hr {
 	background-color: var(--card-click-color);
 }
 
-.tile-contents{
-	-webkit-touch-callout : none;
-	-webkit-user-select: none;
-}
-
-
-.finding-area{
-	padding: 10px;
-	margin: 10px;
-}
+/* main game area */ 
 
 .game-area{
 	border-style: solid;
@@ -153,6 +145,29 @@ hr {
 
 	background-color: var(--game-area-bg-color);
 }
+
+/* kana table cells */
+
+.kana-cell{
+	background-color: var(--kana-cell-bg-color);
+	transition: 0.2s;
+}
+
+.kana-cell:hover {
+	background-color: var(--kana-cell-hover-color);
+}
+
+.kana-cell:active {
+	background-color: var(--kana-cell-click-color);
+}
+
+.kana-cell-contents{
+	-webkit-touch-callout : none;
+	-webkit-user-select: none;
+
+	font-size: 18px;
+}
+
 
 
 .massive {
@@ -167,4 +182,9 @@ hr {
 	border-radius: 10px;
 
 	background-color: var(--game-area-bg-color);
+}
+
+.tile-contents{
+	-webkit-touch-callout : none;
+	-webkit-user-select: none;
 }
