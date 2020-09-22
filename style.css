@@ -10,7 +10,11 @@
 	--card-bg-color: #eeeeff;
 	--card-click-color: #aaaadd;
 	--card-hover-color: #ccccff;
-	
+
+	--font-normal-color: #222244;
+	--font-fade-color: #aaaacc;
+
+
 	--kana-cell-bg-color: #343a40;
 	--kana-cell-click-color: #666699;
 	--kana-cell-hover-color: #444466;
@@ -18,8 +22,10 @@
 	--game-area-border-color: #aaaadd;
 	--game-area-bg-color: #ddddee;
 
-	--success-color: #88cc88;
-	--failure-color: #cc4444;
+	--success-fill-color: #66cc88;
+	--success-border-color: #339966;
+	--failure-fill-color: #cc4444;
+	--failure-border-color: #bb2222;
 
 }
 
@@ -69,10 +75,22 @@ hr {
 	color: var(--btn-text-color);
 }
 
+.card-success{
+	border-color: var(--success-border-color) !important;
+	background-color: var(--success-fill-color) !important;
+}
+
+.card-failure{
+	border-color: var(--failure-border-color) !important;
+	background-color: var(--failure-fill-color) !important;
+}
 
 .card{
 	background-color: var(--card-bg-color);
 	transition: 0.2s;
+
+	min-width: 420px;
+	min-height: 420px;
 
 	padding: 10px;
 	border-style: solid;
@@ -105,7 +123,7 @@ hr {
 .finding-area{
 	padding: 10px;
 	border-style: solid;
-	border-width: 2px;
+	border-width: 4px;
 	border-radius: 10px;
 	border-color: var(--game-area-border-color);
 }
@@ -118,11 +136,12 @@ hr {
 	background-color: var(--card-bg-color);
 	padding: 1px;
 	margin: 1px;
-
+	
 	width: 40px;
 	height: 40px;
 	line-height: 40px;
 	text-align: center;
+	color: var(--font-normal-color);
 	font-weight: bold;
 	display: inline-block;
 }
@@ -133,6 +152,10 @@ hr {
 
 .find-tile:active {
 	background-color: var(--card-click-color);
+}
+
+.tile-faded {
+	color: var(--font-fade-color) !important;
 }
 
 /* main game area */ 

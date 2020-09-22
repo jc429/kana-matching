@@ -5,6 +5,8 @@ var card_stack = [];
 var card_lang = "";
 var tile_lang = "";
 var cur_kana;
+var num_kana;
+var cur_score;
 
 $(document).ready(function(){
 	LoadKana();
@@ -120,6 +122,9 @@ function InitGame(){
 		CheckMatch(kana_name);
 	});
 	
+	cur_score = 0;
+	num_kana = klist.length;
+	DrawScore();
 	DrawCard();
 }
 
@@ -214,14 +219,16 @@ function DrawCard(){
 
 /* check if the correct kana tile was clicked */
 function CheckMatch(guess){
-	FlashCard("red");
 	if(guess == cur_kana.romanji){
 		// success!
-		console.log("success!");
-		DrawCard();
+		//console.log("success!");
+		TintCard(1);
+		FadeTile(cur_kana);
+		setTimeout(DrawCard, 800);
 	}
 	else{
 		// failure!
+		TintCard(0);
 	}
 }
 
@@ -230,9 +237,43 @@ function RevealAnswer(){
 
 }
 
+function FadeTile(kana){
+	var k = "#find-";
+	k += kana.romanji;
+	$(k).addClass("tile-faded");
+}
 
-function FlashCard(color){
+
+function TintCard(correct){
 	console.log("...!");
+
+	if(correct){
+		cur_score++;
+		DrawScore();
+		$("#card-area").addClass("card-success");
+		setTimeout(function() {
+			$("#card-area").removeClass("card-success");
+		}, 150);
+	}
+	else{
+		$("#card-area").addClass("card-failure");
+		setTimeout(function() {
+			$("#card-area").removeClass("card-failure");
+		}, 150);
+	}
+}
+
+/* draw the score */
+function DrawScore(){
+	var score_str = "<p class=\"center\">";
+	score_str += cur_score;
+	score_str += "/";
+	score_str += num_kana;
+	score_str += "</p>";
+
+	var score_area = document.getElementById("score-area");
+	score_area.innerHTML = "";
+	score_area.insertAdjacentHTML("beforeend", score_str);
 }
 
 
