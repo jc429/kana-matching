@@ -45,6 +45,15 @@
 					<div id="score-area" class="score-area">
 						<!-- score stuff goes here -->
 					</div>
+					<div id="game-buttons" class="center">
+						<button id="start-button" type="button" class="btn btn-info">
+							Start Game
+						</button>
+						<br/>
+						<button id="reset-button" type="button" class="btn btn-info">
+							Reset Game
+						</button>
+					</div>
 				</div>
 				<div class="col-sm-5 ">
 					<div id="finding-area" class="finding-area">
@@ -122,12 +131,12 @@
 					<hr/>
 					<div class="form-check">
 						<label class="form-check-label">
-							<input id="show-used" type="checkbox" class="form-check-input" >Indicate Used Tiles 
+							<input id="fade-tiles" type="checkbox" class="form-check-input" >Indicate Used Tiles 
 						</label>
 					</div>
 					<div class="form-check">
 						<label class="form-check-label">
-							<input id="" type="checkbox" class="form-check-input" >
+							<input id="allow-retry" type="checkbox" class="form-check-input" >Allow Retries
 						</label>
 					</div>
 					<div class="form-check">
@@ -140,10 +149,10 @@
 
 			<hr/>
 			
-			<div class="btn-group center">
-				<button id="btn-show-main" type="checkbox" checked="checked"> Show Basic Kana Chart</button>
-				<button id="btn-show-dakuten" type="checkbox" checked="checked"> Show Dakuten Chart</button>
-				<button id="btn-show-combo" type="checkbox" checked="checked"> Show Combo Kana Chart</button>
+			<div class="btn-group d-flex justify-content-center">
+				<button id="btn-show-main" type="checkbox" type="button" class="btn btn-info" checked="checked"> Show Basic Kana Chart</button>
+				<button id="btn-show-dakuten" type="checkbox" type="button" class="btn btn-info" checked="checked"> Show Dakuten Chart</button>
+				<button id="btn-show-combo" type="checkbox" type="button" class="btn btn-info" checked="checked"> Show Combo Kana Chart</button>
 			</div>
 			
 		</div>

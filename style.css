@@ -22,10 +22,10 @@
 	--game-area-border-color: #aaaadd;
 	--game-area-bg-color: #ddddee;
 
-	--success-fill-color: #66cc88;
+	--success-fill-color: #88e8a8;
 	--success-border-color: #339966;
-	--failure-fill-color: #cc4444;
-	--failure-border-color: #bb2222;
+	--failure-fill-color: #e47070;
+	--failure-border-color: #df3c3c;
 
 }
 
@@ -53,7 +53,7 @@ hr {
 	width: 60%;
 }
 
-
+/*div { outline: 1px dashed blue } span { outline: 1px dashed green }*/
 
 .center {
 	text-align: center;
@@ -87,7 +87,7 @@ hr {
 
 .card{
 	background-color: var(--card-bg-color);
-	transition: 0.2s;
+	transition: 0.15s;
 
 	min-width: 420px;
 	min-height: 420px;
@@ -104,9 +104,10 @@ hr {
 	display: block;
 }
 
+/*
 .card:hover {
 	background-color: var(--card-hover-color);
-}
+}*/
 /*
 .card:active {
 	background-color: var(--card-click-color);
@@ -157,6 +158,8 @@ hr {
 .tile-faded {
 	color: var(--font-fade-color) !important;
 }
+
+
 
 /* main game area */ 
 
