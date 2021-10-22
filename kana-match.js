@@ -11,6 +11,9 @@ var cur_score;
 
 var fade_tiles = false;
 var allow_retry = false;
+var show_timer = false;
+
+var game_started = false;
 
 /* Just storing these here for quick copying ⭕ ❌ */
 
@@ -21,22 +24,48 @@ $(document).ready(function(){
 	LoadKana();
 
 	$("#btn-show-main").click(function(){
-		$("#main-chart").toggle();
+		$("#main-chart").show();
+		$("#btn-show-main").hide();
+		$("#btn-hide-main").show();
 	});
+	$("#btn-hide-main").click(function(){
+		$("#main-chart").hide();
+		$("#btn-show-main").show();
+		$("#btn-hide-main").hide();
+	});
+
 	$("#btn-show-dakuten").click(function(){
-		$("#dakuten-chart").toggle();
+		$("#dakuten-chart").show();
+		$("#btn-show-dakuten").hide();
+		$("#btn-hide-dakuten").show();
 	});
+	$("#btn-hide-dakuten").click(function(){
+		$("#dakuten-chart").hide();
+		$("#btn-show-dakuten").show();
+		$("#btn-hide-dakuten").hide();
+	});
+
 	$("#btn-show-combo").click(function(){
-		$("#combo-chart").toggle();
+		$("#combo-chart").show();
+		$("#btn-show-combo").hide();
+		$("#btn-hide-combo").show();
+	});
+	$("#btn-hide-combo").click(function(){
+		$("#combo-chart").hide();
+		$("#btn-show-combo").show();
+		$("#btn-hide-combo").hide();
 	});
 
 	$("input[type=radio]").click(function () {
 		UpdateRadio(this);
 	});
 
-	$(".start-button").click(function(){
-		InitGame();
+	$("#start-button").click(function(){
 		StartGame();
+	});
+
+	$("#restart-button").click(function(){
+		RestartGame();
 	});
 	
 });
@@ -69,7 +98,6 @@ function LoadKana(){
 			div.insertAdjacentHTML("beforeend", "<p class=\"cell-contents\">" + curKana.hiragana + "<br/>" + curKana.katakana + "<br/>" + curKana.romanji + "</p>");
 		});	
 
-		InitGame();
 	});
 }
 
@@ -84,6 +112,7 @@ function InitGame(){
 	/* load settings */
 	fade_tiles = $("#fade-tiles").prop("checked");
 	allow_retry = $("#allow-retry").prop("checked");
+	show_timer = $("#show-timer").prop("checked");
 
 
 	/* determine card language */
@@ -149,7 +178,11 @@ function InitGame(){
 
 /* Once the game is ready to begin, enable user interaction*/
 function StartGame(){
+	InitGame();
+}
 
+function RestartGame(){
+	InitGame();
 }
 
 /* creates a single kana tile */

@@ -214,3 +214,23 @@ hr {
 	-webkit-touch-callout : none;
 	-webkit-user-select: none;
 }
+
+#main-chart{
+	display:none;
+}
+#dakuten-chart{
+	display:none;
+}
+#combo-chart{
+	display:none;
+}
+
+#btn-hide-main{
+	display:none;
+}
+#btn-hide-dakuten{
+	display:none;
+}
+#btn-hide-combo{
+	display:none;
+}
